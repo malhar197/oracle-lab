@@ -10,17 +10,25 @@ class Stocks extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.getStockInfo = this.getStockInfo.bind(this);
 		this.state = {
+			tempSymbol: '',
 			symbol: '',
 			price: '',
 			volume: ''
 		}
 	}
 
-handleChange(event) {
-	this.setState({ symbol: event.target.value });
+handleChange = event => {
+	this.setState({ tempSymbol: event.target.value });
 }
 
-getStockInfo(event){
+setSymbol = event => {
+	event.preventDefault();
+	let symbl = this.state.tempSymbol;
+	this.setState( {symbol: symbl});
+
+}
+
+getStockInfo = event => {
 	fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${this.state.symbol}&apikey=KEY`)
  	.then(res => res.json())
  	.then((data) => {
@@ -46,8 +54,9 @@ render() {
 		<br />
 		<br /> 
 		<div className = 'buttons'>
-		<form>
-		Enter Stock Symbol: <input type="text" value={this.state.symbol} onChange={this.handleChange} />
+		<form onSubmit={this.setSymbol}>
+		Enter Stock Symbol: <input type="text" value={this.state.tempSymbol} onChange={this.handleChange} />
+		<input type="submit" value="Submit" />
 		</form>
 		<br />
 		<button type="button" onClick={this.getStockInfo}> Get info from Alpha Vantage </button>
