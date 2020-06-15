@@ -82,19 +82,11 @@ render() {
 	return (
 		<div>
 		<h1> Stock Market Oracle </h1>
-		<p> This is a demo Ethereum Oracle designed to retrieve information about stocks from Alpha Vantage.
-			Please follow the instructions given below: 
-		</p>
-		<br />
-		<ol>
-			<li> Enter a stock symbol, then press the `Get info from Alpha Vantage` button. </li>
-		</ol>
-		<br />
 		<br /> 
 		<div className = 'buttons'>
 		<form onSubmit={this.setSymbol}>
-		Enter Stock Symbol: <input type="text" value={this.state.tempymbol} onChange={this.handleChange} />
-		<input type="submit" value="Submit" />
+		Enter Stock Symbol: <input type="text" value={this.state.tempSymbol} onChange={this.handleChange} />
+		&nbsp;&nbsp;&nbsp;<input className="submit-btn" type="submit" value="Submit" />
 		</form>
 		<br />
 		<button type="button" onClick={this.getStockInfo}> Get info from Alpha Vantage </button>
@@ -102,22 +94,38 @@ render() {
 		<h3> Stock info from API </h3>
 		<div>
 		
-		Symbol: {this.state.symbol} 
+		Symbol: {this.state.symbol}
+		<br />
+		<br />
 		Price: {this.state.price} 
+		<br />
+		<br />
 		 Volume: {this.state.volume}
+		<br />
+		<br />
 		
 		</div>
+		<div>
 		<button type="button" onClick={this.setStockInfo}> Set stock information in smart contract </button>
+		</div>
 		<br />
+		<div>
 		<button type = "button" onClick={this.getStockPrice}> Retrieve stock price from smart contract </button>
+		</div>
 		<br />
+		<div>
 		<button type = "button" onClick={this.getStockVolume}> Retrieve stock volume from smart contract </button>
+		</div>
 		<br />
 		<h3> Stock info from Oracle </h3>
 		<div>
-		<li> Stock price retrieved from smart contract: {this.state.priceFromContract} </li>
 		<br />
-		<li>Stock volume retrieved from smart contract: {this.state.volumeFromContract}</li>
+		 Stock price retrieved from smart contract: {this.state.priceFromContract}
+		<br />
+		<br />
+		Stock volume retrieved from smart contract: {this.state.volumeFromContract}
+		<br />
+		<br />
 		</div>
 		</div>
 		</div>

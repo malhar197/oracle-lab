@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import './background.png';
 import Stocks from './stocks.js';
 import './App.css';
 

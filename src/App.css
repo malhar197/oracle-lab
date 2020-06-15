@@ -2,37 +2,46 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {
+  background-image: url('background.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: blue;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  background-color: transparent;
+  border: 2px solid white;
+  /*font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;*/
+  color: white;
+  /*padding: 15px 32px;*/
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
+}
+.submit-btn{
+  background-color: transparent;
+  border: 2px solid white;
+  font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  background-color: transparent;
+  border: 2px solid white;
+  font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1em;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
